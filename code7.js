@@ -12,7 +12,7 @@ function tabuada() {
         //Imprime a tabuada do número digitado
         console.log("Tabuada do " + numero + ":");
     
-
+    // Estrutura de repetição com FOR com validação no início.    
     for (let i = 0; i <= 10; i++) {
         const resultado = numero * i;
         console.log(numero + " x " + i + " = " + resultado);
