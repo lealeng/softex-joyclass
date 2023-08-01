@@ -4,7 +4,8 @@ function tabuada() {
     // Solicita ao usuário que digite um número inteiro
     const numero = parseInt(prompt("Digite um número inteiro para ver a sua tabuada: "));
 
-    // Verifica se o valor digitado é um número válido (isNan = para testar se não é um número. Se não for um número válido, uma mensagem de erro é exibida.)
+    // Verifica se o valor digitado é um número válido (isNan = para testar se não é um número. 
+    // Se não for um número válido, uma mensagem de erro é exibida.)
     if (isNaN(numero)) {
         console.log("Por favor, digite um número válido!");
         return tabuada();
