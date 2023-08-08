@@ -111,4 +111,116 @@ function divisao() {
   console.log("O total da sua divisão é: " + total);
 }
 
-calculadora();
+/* Desenvolva um programa que recebe do usuário nome completo e ano de nascimento que seja entre 1922 e 2021. A partir dessas informações, 
+o sistema mostrará o nome do usuário e a idade que completou, ou completará, no ano atual (2022).
+
+Caso o usuário não digite um número ou apareça um inválido no campo do ano, o sistema informará o erro e continuará perguntando até 
+que um valor correto seja preenchido. */
+
+function idade() {
+  const anos2 = 2023;
+
+  const nome = prompt("Digite seu primeiro nome: ");
+  const sobreNome = prompt("Digite seu sobrenome: ");
+  const anos = parseInt(prompt("Digite seu ano de nascimento (yyyy): "));
+  const resultado = anos2 - anos;
+  if (isNaN(anos)) {
+    console.log("Por favor digite um ano válido!");
+    return idade();
+  } else if (anos < 1922) {
+    console.log("Por favor digite um ano entre 1922 e " + anos2 + "!");
+    return idade();
+  } else if (anos > anos2) {
+    console.log("Por favor digite um ano entre 1922 e " + anos2 + "!");
+    return idade();
+  } else {
+    console.log(nome + " " + sobreNome + " você tem " + resultado + " anos!");
+  }
+}
+
+/* Desenvolva um código que simule uma eleição com três candidatos.
+- candidato_X => 889
+- candidato_Y => 847
+- candidato_Z => 515
+- branco => 0
+
+O código deve perguntar se deseja finalizar a votação depois do voto. Caso o número do voto não corresponda a nenhum candidato ou seja branco,
+ele deve ser tratado como nulo. Se for inserido um texto ao invés de número, o código deve retornar uma mensagem para votar novamente.
+
+Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele com o maior número de votos e, também, a quantidade de votos de cada
+candidato, os brancos e nulos.  */
+
+function votacao() {
+  //Definindo as variáveis.
+  let candidato_X = 0;
+  let candidato_Y = 0;
+  let candidato_Z = 0;
+  let branco = 0;
+  let nulo = 0;
+
+  //Criando menu de opções.
+  while (true) {
+    console.log("\nEleição - Candidatos:");
+    console.log("1) Candidato X");
+    console.log("2) Candidato Y");
+    console.log("3) Candidato Z");
+    console.log("0) Voto em branco");
+    console.log("-1) Finalizar votação!");
+
+    const voto = parseInt(prompt("Escolha uma opção para votar!"));
+    if (voto === -1) {
+      break;
+    }
+    if (isNaN(voto)) {
+      console.log(
+        "Voto inválido. Digite uma opção válida ou -1 para finalizar a votação!"
+      );
+      continue;
+    }
+    //Executando opção escolhida do menu.
+    switch (voto) {
+      case 1:
+        candidato_X++;
+        break;
+      case 2:
+        candidato_Y++;
+        break;
+      case 3:
+        candidato_Z++;
+        break;
+      case 0:
+        branco++;
+        break;
+      default:
+        nulo++;
+        break;
+    }
+  }
+  //Imprimindo as informações das votações.
+  console.log("\nVotação finalizada!");
+
+  console.log("Resultado da votação: ");
+  console.log("Candidato X: " + candidato_X + " votos");
+  console.log("Candidato Y: " + candidato_Y + " votos");
+  console.log("Candidato Z: " + candidato_Z + " votos");
+  console.log("Votos em branco: " + branco);
+  console.log("Votos nulos: " + nulo);
+
+  const totalVotos = candidato_X + candidato_Y + candidato_Z + branco + nulo;
+
+  if (totalVotos > 0) {
+    if (candidato_X > candidato_Y && candidato_X > candidato_Z) {
+      console.log("O candidato X é o vencedor!");
+    } else if (candidato_Y > candidato_X && candidato_Y > candidato_Z) {
+      console.log("O candidato Y é o vencedor!");
+    } else if (candidato_Z > candidato_X && candidato_Z > candidato_Y) {
+      console.log("O candidato Z é o vencedor!");
+    } else {
+      console.log("Houve empate entre os candidatos!");
+    }
+  } else {
+    console.log("Nenhum voto foi registrado!");
+  }
+}
+
+votacao();
