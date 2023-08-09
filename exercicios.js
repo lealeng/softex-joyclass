@@ -223,4 +223,63 @@ function votacao() {
   }
 }
 
-votacao();
+// Você deve criar três listas em JavaScript:
+
+// 1. para guardar os nomes de dez pessoas;
+// 2. para guardar as suas idades;
+// 3. para guardar as suas cores favoritas.
+
+// Em seguida, imprima essas listas. Depois, faça algumas modificações, alterando uma cor e uma idade. Ao terminar,
+// imprima novamente todas as informações das três listas.
+
+function arrays() {
+  let nomes = [
+    "Cristiano",
+    " Samuel",
+    " Suellen",
+    " Daniel",
+    " Gabrielly",
+    " Nataly",
+    " Antonio",
+    " Cristina",
+    " Francisco",
+    " Dulce",
+  ];
+  let idades = [33, 31, 29, 27, 24, 13, 62, 61, 10, 11];
+  let cores = [
+    "azul",
+    " verde",
+    " amarelo",
+    " cinza",
+    " preto",
+    " branco",
+    " roxo",
+    " laranja",
+    " vermelho",
+    " marrom",
+  ];
+
+  idades.splice(0, 0, 34);
+  cores.splice(0, 0, "nude");
+  console.log("Nome(s): " + nomes);
+  console.log("Idade(s): " + idades);
+  console.log("Core(s): " + cores);
+}
+
+function arrayBi() {
+  const animais = [
+    ["Leão", "Felino", 8],
+    ["Elefante", "Mamífero", 20],
+    ["Pinguim", "Ave", 5],
+    ["Tubarão", "Peixe", 15],
+  ];
+
+  for (let i = 0; i < animais.length; i++) {
+    const animal = animais[i];
+    console.log("Animal:", animal[0]);
+    console.log("Espécie:", animal[1]);
+    console.log("Idade:", animal[2] + " anos\n");
+  }
+}
+
+arrayBi();
