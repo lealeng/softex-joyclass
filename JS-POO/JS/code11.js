@@ -1,5 +1,3 @@
-
-
 class Mouse {
     modelo = 'Logitech G100'
     cor = 'Preto'
@@ -14,7 +12,6 @@ class Mouse {
             não foi conectado`);
         }
     }
-
     conectar(){
         if (this.conectado) {
             console.log(`O mouse ${this.modelo} já foi conectado`);
@@ -22,20 +19,13 @@ class Mouse {
             this.conectado = true;
         }
     }
-
     desconectar(){
         this.conectado = false
         console.log(`O mouse ${this.modelo} foi desconectado`);
     }
-
 }
-
 let novoMouse = new Mouse();
 
-// novoMouse.modelo = 'Daniel'
-// novoMouse.cor = 'amarelo'
-// novoMouse.tipo = 'usb'
-// novoMouse.conectado = false
 
 novoMouse.clicar();
 
